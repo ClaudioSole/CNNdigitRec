@@ -49,7 +49,7 @@ public class lenetMnistKaggle {
         							  // new CSVRecordReader(numLinesToSkip, delimiter);
     	RecordReader recordReaderTrain = new CSVRecordReader(0,",");
         //recordReaderTrain.initialize(new FileSplit(new ClassPathResource("train.csv").getFile()));
-    	recordReaderTrain.initialize(new FileSplit(new File("C:/Users/jc/Desktop/dl4j-0.4-examples/src/main/resources/train.csv")));
+    	recordReaderTrain.initialize(new FileSplit(new File("C:/train.csv")));
         //reader,label index,number of possible labels
         DataSetIterator mnistTrain = new RecordReaderDataSetIterator(recordReaderTrain,batchSize,0,outputNum);
        
@@ -57,7 +57,7 @@ public class lenetMnistKaggle {
                 
         RecordReader recordReaderTest = new CSVRecordReader(0,",");
         //recordReaderTest.initialize(new FileSplit(new ClassPathResource("test.csv").getFile()));
-        recordReaderTest.initialize(new FileSplit(new File("C:/Users/jc/Desktop/dl4j-0.4-examples/src/main/resources/test.csv")));
+        recordReaderTest.initialize(new FileSplit(new File("C:/test.csv")));
         //reader,label index,number of possible labels
         DataSetIterator mnistTest = new RecordReaderDataSetIterator(recordReaderTest,batchSize,0,outputNum);
         //get the dataset using the record reader. The datasetiterator handles vectorization
